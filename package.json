@@ -1,0 +1,24 @@
+{
+  "name": "react-reducer-hook-middleware",
+  "version": "1.0.0",
+  "description": "react useReducer with middleware support for typescript",
+  "main": "src/index.ts",
+  "repository": "https://github.com/mjstewart/react-reducer-hook-middleware.git",
+  "author": "Matt Stewart <smtp.matt@gmail.com> (https://github.com/mjstewart)",
+  "license": "MIT",
+  "homepage": "https://github.com/mjstewart/react-reducer-hook-middleware",
+  "scripts": {
+    "build": "rimraf build && tsc -p",
+    "clean": "rimraf build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.8",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.4000"
+  }
+}
