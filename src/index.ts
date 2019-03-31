@@ -14,9 +14,7 @@ export interface MiddlewareAPI<S, A> {
 export type Middleware<S, A> = (api: MiddlewareAPI<S, A>) => DispatchAction<A>;
 
 export function useReducerWithMiddleware<R extends Reducer<any, any>>(
-  reducer: Reducer<ReducerState<R>, ReducerAction<R>>,
-  initialState: ReducerState<R>
-): ApplyMiddleware<R> {
+  reducer: Reducer<ReducerState<R>, ReducerAction<R>>, initialState: ReducerState<R>): ApplyMiddleware<R> {
   return (
     middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>
   ) => {
@@ -38,7 +36,7 @@ export function useReducerWithMiddleware<R extends Reducer<any, any>>(
   };
 }
 
-type DispatchAction<A> = (next: Dispatch<A>) => (action: A) => any;
+type DispatchAction<A> = (next: Dispatch<A>) => (action: A) => void;
 
 type ApplyMiddleware<R extends Reducer<any, any>> = (
   middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>
