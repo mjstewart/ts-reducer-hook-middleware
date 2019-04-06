@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  Reducer,
-  ReducerAction,
-  ReducerState,
-  useReducer
-} from 'react';
+import { Dispatch, Reducer, ReducerAction, ReducerState, useReducer } from 'react';
 
 export interface MiddlewareAPI<S, A> {
   dispatch: Dispatch<A>;
@@ -14,24 +8,22 @@ export interface MiddlewareAPI<S, A> {
 export type Middleware<S, A> = (api: MiddlewareAPI<S, A>) => DispatchAction<A>;
 
 export function useReducerWithMiddleware<R extends Reducer<any, any>>(
-  reducer: Reducer<ReducerState<R>, ReducerAction<R>>, initialState: ReducerState<R>): ApplyMiddleware<R> {
-  return (
-    middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>
-  ) => {
+  reducer: Reducer<ReducerState<R>, ReducerAction<R>>,
+  initialState: ReducerState<R>,
+): ApplyMiddleware<R> {
+  return (middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>) => {
     const [store, dispatch] = useReducer(reducer, initialState);
 
     const api: MiddlewareAPI<ReducerState<R>, ReducerAction<R>> = {
       getState: () => store,
-      dispatch: (action: ReducerAction<R>) => dispatch(action)
+      dispatch: (action: ReducerAction<R>) => dispatch(action),
     };
 
-    const chain: Array<DispatchAction<ReducerAction<R>>> = middlewares.map(
-      middleware => middleware(api)
-    );
+    const chain: Array<DispatchAction<ReducerAction<R>>> = middlewares.map(middleware => middleware(api));
 
     return {
       store,
-      dispatch: compose(chain)(dispatch)
+      dispatch: compose(chain)(dispatch),
     };
   };
 }
@@ -39,7 +31,7 @@ export function useReducerWithMiddleware<R extends Reducer<any, any>>(
 type DispatchAction<A> = (next: Dispatch<A>) => (action: A) => void;
 
 type ApplyMiddleware<R extends Reducer<any, any>> = (
-  middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>
+  middlewares: Array<Middleware<ReducerState<R>, ReducerAction<R>>>,
 ) => { store: ReducerState<R>; dispatch: Dispatch<ReducerAction<R>> };
 
 const compose = <A>(fns: Array<DispatchAction<A>>): DispatchAction<A> => {
@@ -54,8 +46,5 @@ const compose = <A>(fns: Array<DispatchAction<A>>): DispatchAction<A> => {
   const rest = fns.slice(0, fns.length - 1);
 
   return (dispatch: Dispatch<A>) =>
-    rest.reduceRight(
-      (composed: Dispatch<A>, f: DispatchAction<A>) => f(composed),
-      last(dispatch)
-    );
+    rest.reduceRight((composed: Dispatch<A>, f: DispatchAction<A>) => f(composed), last(dispatch));
 };

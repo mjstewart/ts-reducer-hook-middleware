@@ -1,5 +1,5 @@
-# react-reducer-hook-middleware
-adds middleware to useReducer hook using typescript
+# ts-reducer-hook-middleware
+adds middleware to react useReducer hook using typescript
 
 benefits?
 

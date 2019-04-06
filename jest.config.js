@@ -11,6 +11,6 @@ module.exports = {
     '!<rootDir>/src/**/__*__/*',
   ],
   moduleDirectories: ['node_modules', 'src'],
-   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   cacheDirectory: '<rootDir>/.cache/',
 };

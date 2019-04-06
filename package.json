@@ -1,17 +1,32 @@
 {
-  "name": "react-reducer-hook-middleware",
+  "name": "ts-reducer-hook-middleware",
   "version": "1.0.0",
-  "description": "react useReducer with middleware support for typescript",
-  "main": "src/index.ts",
+  "description": "typescript react useReducer hook with middleware",
+  "main": "build/index.ts",
+  "types": "build/index.d.ts",
   "repository": "https://github.com/mjstewart/react-reducer-hook-middleware.git",
   "author": "Matt Stewart <smtp.matt@gmail.com> (https://github.com/mjstewart)",
   "license": "MIT",
   "homepage": "https://github.com/mjstewart/react-reducer-hook-middleware",
+  "keywords": [
+    "react",
+    "react-hooks",
+    "hooks",
+    "use-reducer",
+    "redux",
+    "redux-middleware",
+    "middleware",
+    "dispatch"
+  ],
   "scripts": {
-    "build": "rimraf build && tsc -p",
+    "build": "rimraf build && tsc",
     "clean": "rimraf build",
+    "lint": "tslint -p tsconfig.json",
     "test": "jest"
   },
+  "files": [
+    "build/**/*"
+  ],
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.6",
@@ -24,6 +39,8 @@
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.0",
     "tslib": "^1.9.3",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.4000"
   }
 }

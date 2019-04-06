@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
     "paths": { "*": ["types/*"] },
-    "declaration": false,
+    "declaration": true,
     "baseUrl": ".",
-    "outDir": "build/dist",
+    "outDir": "build",
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "allowJs": true,
+    "sourceMap": false,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
@@ -26,5 +25,5 @@
     "esModuleInterop": true,
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "jest"]
+  "exclude": ["node_modules", "build", "jest", "src/**.spec.tsx"]
 }

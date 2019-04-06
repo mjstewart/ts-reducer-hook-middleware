@@ -13,13 +13,7 @@
     "prefer-object-spread": true,
     "prefer-readonly": true,
     "prefer-template": true,
-    "semicolon": [true, "never"],
-    "variable-name": [
-      true,
-      "allow-leading-underscore",
-      "ban-keywords",
-      "check-format"
-    ],
+    "variable-name": [true, "allow-pascal-case", "ban-keywords", "check-format"],
     "interface-over-type-literal": true,
     "no-empty-interface": false,
     "no-for-in-array": true,
@@ -29,8 +23,6 @@
     "no-shadowed-variable": false,
     "no-string-throw": true,
     "no-var-keyword": true,
-    "arrow-return-shorthand": [
-        true
-      ],
+    "arrow-return-shorthand": [true]
   }
 }
