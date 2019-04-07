@@ -1,13 +1,13 @@
 {
   "name": "ts-reducer-hook-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "typescript react useReducer hook with middleware",
-  "main": "./lib/index.ts",
-  "types": "./lib/index.d.ts",
-  "repository": "https://github.com/mjstewart/react-reducer-hook-middleware.git",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/mjstewart/ts-reducer-hook-middleware.git",
   "author": "Matt Stewart <smtp.matt@gmail.com> (https://github.com/mjstewart)",
   "license": "MIT",
-  "homepage": "https://github.com/mjstewart/react-reducer-hook-middleware",
+  "homepage": "https://github.com/mjstewart/ts-reducer-hook-middleware",
   "keywords": [
     "react",
     "react-hooks",
