@@ -27,15 +27,16 @@ https://github.com/mjstewart/ts-reducer-hook-middleware/blob/master/example/src/
 
 ```
   const upperConsoleLogger: Middleware<TodoState, TodoAction> = api => next => action => {
-  console.log(`upperConsoleLogger - NEXT ACTION = ${JSON.stringify(action)}`);
-  next(action);
+     console.log(`upperConsoleLogger - NEXT ACTION = ${JSON.stringify(action)}`);
+     next(action);
   };
 
   const todoReducer: Reducer<TodoState, TodoAction> = (state, action) => {
-  switch (action.type) {
-    case ActionType.ADD: {
-        ....
-    }
+     switch (action.type) {
+       case ActionType.ADD: {
+          ....
+       }
+     }
   }
 
   // Must use typeof todoReducer for typescript to work its magic
