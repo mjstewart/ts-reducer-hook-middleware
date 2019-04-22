@@ -38,7 +38,8 @@ https://github.com/mjstewart/ts-reducer-hook-middleware/blob/master/example/src/
     }
   }
 
-  // Must use typeof todoReducer
+  // Must use typeof todoReducer for typescript to work its magic
+  // middlewares applied from left to right, eg historyLogger is called last
   const { store, dispatch } = useReducerWithMiddleware<typeof todoReducer>(todoReducer, initialState)([
     lowerConsoleLogger,
     upperConsoleLogger,
