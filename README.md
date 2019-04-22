@@ -9,6 +9,7 @@ The running example uses a Todo application where the reducer has a state and ac
 
 # Install
 https://www.npmjs.com/package/ts-reducer-hook-middleware
+
 `npm i ts-reducer-hook-middleware`
 
 # Examples
@@ -17,9 +18,12 @@ The example project contains the full version
 
 https://github.com/mjstewart/ts-reducer-hook-middleware/tree/master/example
 
-Contains the actual setup of the useReducer hook.
+Contains the actual setup of the useReducer hook
+
 https://github.com/mjstewart/ts-reducer-hook-middleware/blob/master/example/src/todo/index.tsx#L43
 
+
+## Quick start example
 
 ```
   const upperConsoleLogger: Middleware<TodoState, TodoAction> = api => next => action => {
