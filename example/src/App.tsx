@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
- 
+import * as React from 'react';
+import { Container } from 'semantic-ui-react';
+import Todo from './todo';
+
 const App: React.FC = () => {
   return (
-    <div>
-       
-    </div>
+    <Container>
+       <Todo/>
+    </Container>
   )
 } 
 

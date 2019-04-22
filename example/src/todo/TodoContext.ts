@@ -1,6 +1,9 @@
-import { Todo, TodoState } from '@todo/types';
-import { createContext, useContext } from 'react';
- 
-const initialState: TodoState = { todos: [] };
+import { Context, createContext, Dispatch } from 'react';
+import { TodoAction, TodoState } from './types';
 
-export const TodoContext = useContext(createContext(initialState));
+export interface TodoContext {
+  store: TodoState;
+  dispatch: Dispatch<TodoAction>;
+}
+
+export default createContext({} as TodoContext);

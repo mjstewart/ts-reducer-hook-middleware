@@ -6,9 +6,9 @@ export interface Action<A, P> extends SimpleAction<A> {
   payload: P;
 }
 
-export function action<A extends string, P>(type: A, payload: P): Action<A, P>;
-export function action<A extends string>(type: A): SimpleAction<A>;
-export function action<A extends string, P>(type: A, payload?: P) {
+export function createAction<A extends string, P>(type: A, payload: P): Action<A, P>;
+export function createAction<A extends string>(type: A): SimpleAction<A>;
+export function createAction<A extends string, P>(type: A, payload?: P) {
   return payload === undefined ? { type } : { type, payload };
 }
 
